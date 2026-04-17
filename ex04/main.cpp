@@ -68,9 +68,10 @@ int	main(int ac, char **av)
 
 	string buffer;
 	string string_in;
-	while (getline(file_in, buffer))
-		string_in += buffer.append("\n");
+	while (getline(file_in, buffer,(char) EOF))
+		string_in += buffer;
 	file_in.close();
+
 
 	string final_s = ft_filter(string_in, av[2], av[3]);
 	file_out << final_s;
