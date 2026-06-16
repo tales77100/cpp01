@@ -2,24 +2,19 @@
 # define ZOMBIE_HPP
 # include "Zombie.hpp"
 
-#include <iomanip>
-#include <iostream>
+# include <iomanip>
+# include <iostream>
 
-using namespace std;
-
-void  randomChump(string name);
+void  randomChump(std::string name);
 
 class Zombie{
 	public:
 		void	announce(void);
-		void	set_name(const string name)
-		{
-			this->name = name;
-		};
+		void	set_name(const std::string name);
 	private:
-		string	name;
+		std::string	name;
 
 };
 
-Zombie	*zombieHorde(int N, string name);
+Zombie	*zombieHorde(int N, std::string name);
 #endif

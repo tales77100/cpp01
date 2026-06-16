@@ -1,19 +1,17 @@
 #include <iostream>
 
-using namespace std;
-
 int	main(void)
 {
-	string	s = "HI THIS IS BRAIN";
+	std::string	s = "HI THIS IS BRAIN";
 	const char	*s_point = s.data();
 	const char	&s_ref = s.operator[](0);
 	const char	*s_point_ref = &s_ref;
 
-	cout << &s << endl;
-	cout << &s_point << endl;
-	cout << &s_point_ref << endl;
+	std::cout << &s << std::endl;
+	std::cout << &s_point << std::endl;
+	std::cout << &s_point_ref << std::endl;
 
-	cout << s << endl;
-	cout << s_point << endl;
-	cout << s_ref << endl;
+	std::cout << s << std::endl;
+	std::cout << s_point << std::endl;
+	std::cout << s_ref << std::endl;
 }
