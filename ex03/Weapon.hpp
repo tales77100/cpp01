@@ -4,14 +4,13 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class Weapon{
 	public:
-		Weapon(string t) 	: type(t) {};
-		string	&getType();
-		void	setType(string new_type);
-		string type;
+		Weapon(std::string t);
+		const std::string &getType() const;
+		void setType(const std::string &new_type);
+	private:
+		std::string type;
 };
 
 #endif

@@ -4,8 +4,6 @@
 #include "HumanB.hpp"
 
 
-using namespace std;
-
 int main()
 {
 	{
@@ -22,6 +20,22 @@ int main()
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+	{
+		Weapon club = Weapon("crudesadasdsadsadiked club");
+		HumanB jhon("jhon");
+		jhon.attack();
+		jhon.setWeapon(club);
+		jhon.attack();
+		club.setType("some other type ewewewqb");
+		jhon.attack();
+	}
+	{
+		Weapon club = Weapon("crude safsfsdfds club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some sdfsdfsdfdsf type of club");
+		bob.attack();
 	}
 	return 0;
 }

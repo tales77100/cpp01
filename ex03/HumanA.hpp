@@ -5,15 +5,11 @@
 
 class	HumanA{
 	public:
-		HumanA(string n, Weapon w) : weapon(w), name(n){};
+		HumanA(const std::string &n, Weapon &w);
 		void	attack(void);
-		void HumamA(string name, Weapon weapon)
-		{
-			this->weapon = weapon;
-			this->name = name;
-		}
-		Weapon weapon;
-		string name;
+	private:
+		Weapon &weapon;
+		std::string name;
 };
 
 #endif

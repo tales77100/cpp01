@@ -3,10 +3,14 @@
 
 void	HumanB::attack(void)
 {
-	std::cout << this->name << " attacks with their " << this->weapon.type << std::endl;
+	if (this->weapon)
+		std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon new_weapon)
+void	HumanB::setWeapon(Weapon &new_weapon)
 {
-	this->weapon = new_weapon;
+	this->weapon = &new_weapon;
 }
+
+HumanB::HumanB(const std::string &n, Weapon &w) : name(n), weapon(&w) {}
+HumanB::HumanB(const std::string &n) : name(n), weapon(NULL) {}
