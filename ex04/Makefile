@@ -1,21 +1,28 @@
-FILES = main.cpp \
-	
+FILES =	main.cpp \
 
+OBJDIR = obj
+OBJ = $(FILES:%.cpp=$(OBJDIR)/%.o)
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
-
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 CC = c++
 
-NAME = mySed
+NAME = my_sed
 
 all: $(NAME)
 
-$(NAME): 
-	$(CC) $(CFLAGS) $(FILES) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+
+$(OBJDIR)/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(OBJDIR)
 
-re: clean all
+fclean: clean
+	rm -f $(NAME)
 
-.PHONY: all clean re
+re: fclean all
+
+.PHONY: all clean fclean re

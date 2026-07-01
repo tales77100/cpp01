@@ -14,6 +14,7 @@ int main(int ac, char *av[])
 	std::cout << std::endl;
 	harl.complain("a");
     std::cout << std::endl;
-    harl.complain(av[1]);
+	if (ac == 2)
+    	harl.complain(av[1]);
 	return 0;
 }
