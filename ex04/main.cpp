@@ -8,32 +8,26 @@ std::string	ft_filter(std::string str, char *target, char *into)
 {
 	std::string out;
 	size_t	found = 0;
-	size_t	i = 0;
-	while (str[i])
+	while (str.size() > 0)
 	{
 		if ((found = str.find(target)) > 0)
 		{
-			while (i < found && str[i])
-				out += str[i++];
-			if (!str[i])
+			out.append(str.substr(0, found));
+			if (str.size() == 0 || str.size() < found)
 				return (out);
 			out.append(into);
-			i += strlen(target);
-			str = &str[i];
+			str = &str[found] + strlen(target);
 		}
 		else if (found == 0 && str[found] == target[0])
 		{
 			out.append(into);
-			i += strlen(target);
-			str = &str[i];
+			str = &str[strlen(target)];
 		}
 		else
 		{
-			while (str[i])
-				out+= str[i++];
-			str = &str[i];
+			out.append(str);
+			str = &str[str.size()];
 		}
-		i = 0;
 	}
 	return (out);
 }

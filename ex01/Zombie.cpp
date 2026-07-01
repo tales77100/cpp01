@@ -9,3 +9,6 @@ void	Zombie::set_name(const std::string name)
 {
 	this->name = name;
 };
+
+Zombie::Zombie() {std::cout << "Zombie constructor called" << std::endl;};
+Zombie::~Zombie() {std::cout << this->name << " has been destroyed" << std::endl;};

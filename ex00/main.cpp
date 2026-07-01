@@ -5,5 +5,6 @@ int	main(void)
 	randomChump("tango");
 	Zombie *z = newZombie("charlie");
 	z->announce();
+	randomChump("tango");
 	delete z;
 }
